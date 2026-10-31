@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Intern Bot</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>GenAI Bot</h2>
+                <button id="new-chat-btn">+ New Chat</button>
+            </div>
+
+            <h4 class="history-heading">Your conversations</h4>
+
+            <div id="conversation-list" class="conversation-list">
+                <!-- Conversations will load here -->
+            </div>
+
+            <div class="sidebar-footer">
+                Built with Python + Flask + Gemini
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+
+            <header class="chat-header">
+                <div>
+                    <h2>GenAI Intern Bot</h2>
+                    <p>Your intelligent AI assistant</p>
+                </div>
+            </header>
+
+            <div id="chat-box" class="chat-box">
+                <div class="message bot">
+                    Hello! 👋 I'm your AI assistant.
+                    Ask me anything about programming, AI, machine learning or technology.
+                </div>
+            </div>
+
+            <footer class="input-area">
+                <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Message GenAI Intern Bot..."
+                    autocomplete="off"
+                >
+                <button id="send-btn">Send</button>
+            </footer>
+
+            <p class="footer-note">Powered by Google Gemini API</p>
+
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
